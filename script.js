@@ -10,4 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
       // mobileMenuBtn.classList.toggle('open');
     });
   }
+
+  // Simple JavaScript to handle the toggle
+  const accordions = document.querySelectorAll(".accordion-header");
+
+  accordions.forEach((accordion) => {
+    accordion.addEventListener("click", function () {
+      // Toggle active class on header
+      this.classList.toggle("active");
+
+      // Handle the content height for animation
+      const content = this.nextElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  });
 });

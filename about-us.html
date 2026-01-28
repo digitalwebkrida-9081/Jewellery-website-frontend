@@ -1,0 +1,1022 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Libre+Baskerville:wght@700&family=Nunito+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* 1. SECTION WRAPPER */
+      .about-us-section-wrapper {
+        width: 100%;
+        padding: 80px 100px;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        box-sizing: border-box;
+        overflow: hidden; /* Prevents scrollbars if images shift slightly */
+      }
+
+      .about-us-inner-container {
+        width: 100%;
+        max-width: 1620px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 60px; /* Space between the images and the text */
+        font-family: "Nunito Sans", sans-serif;
+      }
+
+      /* 2. IMAGE COLUMN (Left Side) */
+      .about-us-images-group {
+        flex: 1; /* Takes up roughly half the space */
+        position: relative;
+        min-height: 600px; /* Ensures space for the staggered images */
+        display: flex;
+      }
+
+      /* Responsive styling for the images to scale */
+      .about-us-img-1 {
+        width: 55%; /* Percentage width allows scaling */
+        max-width: 364px;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .about-us-img-2 {
+        width: 55%;
+        max-width: 371px;
+        height: auto;
+        position: absolute;
+        top: 180px; /* Matches your offset design */
+        left: 45%; /* Shifts it to the right */
+        z-index: 2;
+        object-fit: cover;
+        border-radius: 4px;
+        box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.05); /* Optional: adds depth */
+      }
+
+      /* 3. CONTENT COLUMN (Right Side) */
+      .about-us-content-group {
+        flex: 1.2; /* Gives the text slightly more width */
+        padding-top: 15px; /* Aligns visually with the top image */
+      }
+
+      .about-us-title {
+        color: #dcb9a3;
+        font-size: 30px;
+        font-weight: 400;
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        margin-bottom: 35px;
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Custom Underline Style */
+      .about-us-title::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #dcb9a3;
+        margin-top: 5px;
+      }
+
+      .about-us-paragraph {
+        color: #222222;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+        margin-bottom: 0px;
+        text-align: left;
+      }
+
+      /* 4. RESPONSIVE MEDIA QUERY */
+      @media (max-width: 1024px) {
+        .about-us-inner-container {
+          flex-direction: column; /* Stacks vertically on tablets/mobile */
+          gap: 40px;
+        }
+
+        .about-us-images-group {
+          width: 100%;
+          min-height: 450px; /* Reduces height on smaller screens */
+          justify-content: center; /* Centers images */
+          margin-bottom: 20px;
+        }
+
+        .about-us-img-1 {
+          position: relative;
+          width: 45%;
+          left: auto;
+          margin-right: -50px; /* Overlap effect */
+        }
+
+        .about-us-img-2 {
+          position: relative;
+          width: 45%;
+          top: 80px; /* Less vertical drop on mobile */
+          left: auto;
+        }
+
+        .about-us-content-group {
+          width: 100%;
+          padding-top: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .about-us-title {
+          font-size: 32px;
+        }
+
+        .about-us-paragraph {
+          font-size: 18px; /* Readable text size for mobile */
+          line-height: 28px;
+        }
+
+        /* On very small screens, simpler image layout */
+        .about-us-images-group {
+          min-height: auto;
+          display: block;
+          text-align: center;
+        }
+
+        .about-us-img-1,
+        .about-us-img-2 {
+          position: static;
+          width: 80%;
+          margin: 0 auto 20px auto;
+          display: block;
+        }
+      }
+
+      /* 1. SECTION WRAPPER */
+      .about-us-sec2-wrapper {
+        width: 100%;
+        padding: 0px 100px;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      .about-us-sec2-container {
+        width: 100%;
+        max-width: 1528px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Nunito Sans", sans-serif;
+      }
+
+      /* 2. MAIN HEADER */
+      .about-us-sec2-main-title {
+        color: #dcb9a3;
+        font-size: 30px;
+        font-weight: 500;
+        text-transform: capitalize;
+        letter-spacing: 2.1px;
+        text-align: center;
+        margin-bottom: 60px; /* Spacing between title and content */
+      }
+
+      /* 3. CONTENT ROW (Image Left, Text Right) */
+      .about-us-sec2-content-row {
+        display: flex;
+        width: 100%;
+        align-items: center; /* Vertically centers the text with the image */
+        justify-content: space-between;
+        gap: 60px; /* Gap between image and text */
+      }
+
+      /* 4. IMAGE GROUP (The Frame Effect) */
+      .about-us-sec2-image-group {
+        position: relative;
+        flex: 1; /* Takes up half the space */
+        max-width: 671px; /* Max width from your design */
+        padding: 10px; /* Creates space for the frame offset */
+      }
+
+      /* The decorative border frame */
+      .about-us-sec2-frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 95%;
+        height: 100%;
+        border: 1px solid #dcb9a3;
+        z-index: 1;
+      }
+
+      /* The actual image */
+      .about-us-sec2-img {
+        position: relative;
+        width: 90%; /* Slightly smaller than frame to create the offset look */
+        height: auto;
+        display: block;
+        margin: 11px 0 0 11px; /* The offset: moves image down/right inside frame */
+        z-index: 2;
+        object-fit: cover;
+      }
+
+      /* 5. TEXT GROUP */
+      .about-us-sec2-text-group {
+        flex: 1; /* Takes up the other half */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .about-us-sec2-subtitle {
+        color: #dcb9a3;
+        font-size: 24px;
+        font-weight: 400;
+        text-transform: capitalize;
+        letter-spacing: 1.5px;
+        margin-bottom: 25px;
+      }
+
+      .about-us-sec2-desc {
+        color: #222222;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 35px;
+      }
+
+      /* Responsive for Sec 2 */
+      @media (max-width: 1024px) {
+        .about-us-sec2-wrapper {
+          padding: 0 40px;
+        }
+        .about-us-sec2-content-row {
+          flex-direction: column; /* Stack image on top of text */
+          align-items: center;
+          gap: 40px;
+        }
+        .about-us-sec2-image-group {
+          width: 100%;
+          max-width: 500px; /* Restrict image size on tablets */
+        }
+        .about-us-sec2-text-group {
+          text-align: center; /* Center text on mobile */
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .about-us-sec2-wrapper {
+          padding: 0 20px;
+        }
+        .about-us-sec2-main-title {
+          font-size: 28px;
+          margin-bottom: 40px;
+        }
+        .about-us-sec2-subtitle {
+          font-size: 20px;
+        }
+        .about-us-sec2-desc {
+          font-size: 16px;
+          line-height: 28px;
+        }
+        .about-us-sec2-frame {
+          display: none;
+        }
+        .about-us-sec2-img {
+          margin: 0; /* Remove offset on small screens */
+          width: 100%;
+        }
+        .about-us-sec2-image-group {
+          padding: 0;
+        }
+      }
+
+      /* 3. SECTION WRAPPER */
+      .about-us-sec3-wrapper {
+        width: 100%;
+        padding: 80px 100px;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        box-sizing: border-box;
+      }
+
+      .about-us-sec3-container {
+        width: 100%;
+        max-width: 1256px;
+        position: relative;
+        /* We use Grid here to handle the overlap easily */
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns */
+        align-items: center; /* Vertically center content */
+        font-family: "Nunito Sans", sans-serif;
+      }
+
+      /* 2. RIGHT SIDE: IMAGE */
+      /* The image sits in the second column */
+      .about-us-sec3-image-group {
+        grid-column: 2;
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1; /* Lowest layer */
+      }
+
+      .about-us-sec3-img {
+        width: 70%;
+        height: 70%;
+        display: block;
+        object-fit: cover;
+        /* Optional: limit max height to keep it looking like the design */
+        /* max-height: 893px; */
+      }
+
+      /* 3. LEFT SIDE: CONTENT BOX (The Overlapping Part) */
+      .about-us-sec3-content-group {
+        /* This is the magic: It spans into the 2nd column to create overlap */
+        grid-column: 1 / 2;
+        width: 120%; /* Makes it wider to overlap the image */
+        position: relative;
+        z-index: 2; /* Sits on top of image */
+        display: flex;
+        align-items: center;
+      }
+
+      /* 4. THE DECORATIVE FRAME (Border) */
+      .about-us-sec3-frame {
+        position: absolute;
+        top: 5px; /* Offset upwards */
+        left: 0;
+        width: 85%; /* Don't span the full width of text box */
+        height: 100%;
+        border: 1px solid #dcb9a3;
+        z-index: -1; /* Behind the pink box */
+      }
+
+      /* 5. THE PINK BOX */
+      .about-us-sec3-card {
+        background-color: #fdeee6;
+        padding: 60px 50px 60px 90px; /* Left padding creates the "offset" look */
+        width: 100%;
+        margin-left: 10px; /* Slight offset from the frame */
+        margin-top: 10px;
+      }
+
+      /* 6. TYPOGRAPHY */
+      .about-us-sec3-title {
+        color: black;
+        font-size: 26px;
+        font-weight: 500;
+        text-transform: capitalize;
+        letter-spacing: 1.5px;
+        margin-bottom: 25px;
+      }
+
+      .about-us-sec3-desc {
+        color: #222222;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 44px;
+      }
+
+      /* Responsive for Sec 3 */
+      @media (max-width: 1024px) {
+        .about-us-sec3-wrapper {
+          padding: 60px 40px;
+        }
+        .about-us-sec3-container {
+          display: flex;
+          flex-direction: column-reverse; /* Stacks: Image Top, Text Bottom */
+          gap: 0;
+        }
+        .about-us-sec3-content-group {
+          width: 100%; /* Reset width */
+          margin-top: -50px; /* Pull text box UP over the image slightly */
+          justify-content: center;
+        }
+        .about-us-sec3-card {
+          width: 90%; /* Center the card */
+          padding: 40px;
+          margin: 0 auto; /* Center alignment */
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add shadow for depth on mobile */
+        }
+        /* Hide the decorative frame on tablet/mobile as it gets messy */
+        .about-us-sec3-frame {
+          display: none;
+        }
+        .about-us-sec3-image-group {
+          width: 100%;
+          height: 400px; /* Fix height for mobile banner look */
+        }
+        .about-us-sec3-img {
+          height: 100%;
+          object-position: top; /* Focus on top of image */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .about-us-sec3-wrapper {
+          padding: 40px 20px;
+        }
+        .about-us-sec3-title {
+          font-size: 24px;
+        }
+        .about-us-sec3-desc {
+          font-size: 16px; /* Readable mobile text */
+          line-height: 28px;
+        }
+        .about-us-sec3-card {
+          padding: 30px 20px;
+          width: 100%;
+        }
+        .about-us-sec3-content-group {
+          margin-top: -30px;
+        }
+      }
+
+      /* 1. SECTION WRAPPER */
+      .about-us-sec4-wrapper {
+        width: 100%;
+        padding: 0px 100px;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      .about-us-sec4-container {
+        width: 100%;
+        max-width: 1528px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Nunito Sans", sans-serif;
+      }
+
+      /* 2. HEADER SECTION (Top Titles) */
+      .about-us-sec4-header {
+        text-align: center;
+        max-width: 1000px;
+        margin-bottom: 60px; /* Space between header and image/text row */
+      }
+
+      .about-us-sec4-main-title {
+        color: #dcb9a3;
+        font-size: 30px;
+        font-weight: 500;
+        text-transform: capitalize;
+        letter-spacing: 2.1px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .about-us-sec4-sub-desc {
+        color: #58637c;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+
+      /* 3. CONTENT ROW (Image Left, Text Right) */
+      .about-us-sec4-row {
+        display: flex;
+        width: 100%;
+        align-items: flex-start; /* Aligns items to top */
+        justify-content: space-between;
+        gap: 60px;
+      }
+
+      /* 4. IMAGE GROUP (The Frame Effect) */
+      .about-us-sec4-image-group {
+        position: relative;
+        flex: 1;
+        max-width: 671px; /* Matches design width */
+        padding: 10px; /* Space for the offset */
+      }
+
+      /* The decorative border frame */
+      .about-us-sec4-frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #dcb9a3;
+        z-index: 1;
+      }
+
+      /* The actual image */
+      .about-us-sec4-img {
+        position: relative;
+        width: 96%;
+        height: auto;
+        display: block;
+        margin: 11px 0 0 11px; /* The Offset: moves image down-right */
+        z-index: 2;
+        object-fit: cover;
+      }
+
+      /* 5. TEXT CONTENT (Right Side) */
+      .about-us-sec4-text-group {
+        flex: 1.2; /* Gives text slightly more room */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 10px; /* Visual alignment with image top */
+      }
+
+      .about-us-sec4-content-title {
+        color: #dcb9a3;
+        font-size: 28px;
+        font-weight: 400;
+        text-transform: capitalize;
+        letter-spacing: 1.5px;
+        margin-bottom: 25px;
+      }
+
+      .about-us-sec4-paragraph {
+        color: #222222;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 35px; /* High line height from design */
+      }
+
+      /* Responsive for Sec 4 */
+      @media (max-width: 1024px) {
+        .about-us-sec4-wrapper {
+          padding: 0 40px;
+        }
+        .about-us-sec4-row {
+          flex-direction: column; /* Stack vertically */
+          align-items: center;
+          gap: 40px;
+        }
+        .about-us-sec4-image-group {
+          width: 100%;
+          max-width: 500px;
+        }
+        .about-us-sec4-text-group {
+          width: 100%;
+          text-align: center; /* Center text on tablet/mobile */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .about-us-sec4-wrapper {
+          padding: 0 20px;
+        }
+        /* Adjust Header Fonts */
+        .about-us-sec4-main-title {
+          font-size: 28px;
+        }
+        .about-us-sec4-sub-desc {
+          font-size: 16px;
+        }
+        /* Adjust Content Fonts */
+        .about-us-sec4-content-title {
+          font-size: 22px;
+        }
+        .about-us-sec4-paragraph {
+          font-size: 16px; /* Much smaller for readability on phone */
+          line-height: 28px; /* Reduced line height for phone */
+        }
+        /* Adjust Image Frame */
+        .about-us-sec4-img {
+          margin: 0; /* Remove offset on small screens if desired */
+          width: 100%;
+        }
+        .about-us-sec4-image-group {
+          padding: 0;
+        }
+        .about-us-sec4-frame {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="top-bar">
+        <p>Free shipping | Free 30 days return</p>
+      </div>
+
+      <div class="main-header container">
+        <div class="header-left">
+          <a href="#" class="icon-link">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Book Appointment</span>
+          </a>
+          <a href="tel:1322131324" class="icon-link">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              ></path>
+            </svg>
+            <span>132-213-1324</span>
+          </a>
+        </div>
+
+        <div class="header-logo">
+          <a href="#">JEWELRY BRAND</a>
+        </div>
+
+        <div class="header-right">
+          <a href="#" class="icon-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search</span>
+          </a>
+          <a href="#" class="icon-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>My Account</span>
+          </a>
+          <a href="#" class="icon-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              ></path>
+            </svg>
+            <span>Favorite</span>
+          </a>
+          <a href="#" class="icon-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              ></path>
+            </svg>
+            <span>Cart</span>
+          </a>
+          <button class="mobile-menu-btn">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="#">Jewelry</a></li>
+          <li><a href="#">Diamond</a></li>
+          <li><a href="#">Engagement</a></li>
+          <li><a href="#">Wedding</a></li>
+          <li><a href="#">High Jewelry</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Gifts</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ======================== section 1 ========================= -->
+
+    <section class="about-us-section-wrapper">
+      <div class="about-us-inner-container">
+        <div class="about-us-images-group">
+          <img
+            src="./assets/images/about-us-1.jpg"
+            alt="Apricot Jewellery Model"
+            class="about-us-img-1"
+          />
+          <img
+            src="./assets/images/about-us-2.jpg"
+            alt="Apricot Jewellery Collection"
+            class="about-us-img-2"
+          />
+        </div>
+
+        <div class="about-us-content-group">
+          <h1 class="about-us-title">A little about us…</h1>
+
+          <p class="about-us-paragraph">
+            Started in 2024, Apricot Jewellery is India's largest fashion
+            jewellery destination with a robust online presence and an expansive
+            retail footprint of 20+ stores across India. Apricot Jewellery has
+            successfully introduced the concept of high quality, flawlessly
+            crafted jewellery at affordable price points – a feat that remains
+            unmatched in an increasingly busy segment.
+          </p>
+
+          <p class="about-us-paragraph">
+            We take pride in our commitment to rare and traditional art, crafts
+            and narratives, creating contemporary accessories for its discerning
+            patrons. Handcrafted masterpieces, affordable luxury, unique
+            artistic jewellery from some of the finest designers in the country
+            are now at your fingertips with Apricot Jewellery.
+          </p>
+
+          <p class="about-us-paragraph">
+            The only brand with a versatile line of jewellery, perfect sartorial
+            companions to every woman and man. Created by a team of exceptional
+            designers, crafts people and connoisseurs of style, Apricot
+            Jewellery features jewellery for those who know their style from
+            fashion fads and are willing to spark a trend rather than just
+            follow it. Each piece of jewellery has been crafted exclusively for
+            Apricot Jewellery, with its outstanding karigari and lyrical
+            aesthetic. Not just the exquisite jewellery, the prices too will add
+            a sparkle to your smile.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-us-sec2-wrapper">
+      <div class="about-us-sec2-container">
+        <div class="about-us-sec2-main-title">
+          We’re deliberately different.
+        </div>
+
+        <div class="about-us-sec2-content-row">
+          <div class="about-us-sec2-image-group">
+            <!-- <div class="about-us-sec2-frame"></div> -->
+            <img
+              class="about-us-sec2-img"
+              src="./assets/images/about-us-3.jpg"
+              alt="Ring Preview"
+            />
+          </div>
+
+          <div class="about-us-sec2-text-group">
+            <div class="about-us-sec2-subtitle">home preview</div>
+            <div class="about-us-sec2-desc">
+              The best way to find the ring you want is to build it yourself.
+              The best way to buy the ring you want is to see it for yourself.
+              With Clarity combines the best of both worlds, so you can shop
+              with confidence. Our Home Preview program allows you to try on up
+              to 2 custom replica rings from the comfort of your own home
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-us-sec3-wrapper">
+      <div class="about-us-sec3-container">
+        <div class="about-us-sec3-content-group">
+          <div class="about-us-sec3-frame"></div>
+
+          <div class="about-us-sec3-card">
+            <h2 class="about-us-sec3-title">Expert Gemologists</h2>
+            <p class="about-us-sec3-desc">
+              Our team is as dedicated to you as you are to yours. They've
+              curated and inspected our diamonds and products to ensure quality
+              and craftsmanship is in every detail. Any questions? We're
+              available to help.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-us-sec3-image-group">
+          <img
+            class="about-us-sec3-img"
+            src="./assets/images/about-us-4.jpg"
+            alt="Gemologist at work"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="about-us-sec4-wrapper">
+      <div class="about-us-sec4-container">
+        <div class="about-us-sec4-header">
+          <h2 class="about-us-sec4-main-title">
+            Excellent quality, reasonable prices.
+          </h2>
+          <p class="about-us-sec4-sub-desc">
+            We believe in being different. We'll ensure that you get the exact
+            ring you want at a price you'll fall in love with.
+          </p>
+        </div>
+
+        <div class="about-us-sec4-row">
+          <div class="about-us-sec4-image-group">
+            <div class="about-us-sec4-frame"></div>
+            <img
+              class="about-us-sec4-img"
+              src="./assets/images/about-us-5.jpg"
+              alt="Diamond Ring Inspection"
+            />
+          </div>
+
+          <div class="about-us-sec4-text-group">
+            <h3 class="about-us-sec4-content-title">Conflict-free diamonds</h3>
+            <p class="about-us-sec4-paragraph">
+              Sourcing and grading diamonds is complicated, but shopping for one
+              should be clear. So we did the work of vetting every step of the
+              process so you can buy with confidence. We choose to work only
+              with trusted diamond cutters who use ethical practices to source
+              and shape their diamonds. We offer lab grown and natural earth
+              mined diamonds. We follow that up with a GIA or IGI certification
+              and an inspection by our in-house team of gemologists. You created
+              the love story. We just make rings worthy of it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Footer Section ================================= -->
+
+    <footer class="site-footer">
+      <div class="footer-accent-bar top"></div>
+
+      <div class="container footer-main">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3 class="footer-heading">Company</h3>
+            <ul class="footer-links">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Our Stores</a></li>
+              <li><a href="#">Franchise Enquiry</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="#">Diamond</a></li>
+              <li><a href="#">Engagement</a></li>
+              <li><a href="#">Jewelry</a></li>
+              <li><a href="#">Lab Grown Diamonds</a></li>
+              <li><a href="#">Metals</a></li>
+              <li><a href="#">Ring Size Guide</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-heading">Legal</h3>
+            <ul class="footer-links">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Customer Support</a></li>
+              <li><a href="#">Franchise Enquiry</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-heading">Order</h3>
+            <ul class="footer-links">
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Return Policy</a></li>
+              <li><a href="#">Cancellation Policy</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Check Order Status</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-heading">Contact</h3>
+            <div class="contact-info">
+              <p class="company-name">Apricot Jewelers Pvt. Ltd.</p>
+              <p>
+                56 W, Broadway Street, Park Avenue,<br />San Jose, California -
+                056
+              </p>
+              <p>+1 (226) 152-4722</p>
+              <p>+315 652 415 452</p>
+              <p>info@zibak.com</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <div class="footer-bottom-flex">
+          <div class="newsletter-block">
+            <h3 class="footer-heading underlined">
+              Subscribe for our daily Offers & News later
+            </h3>
+            <form class="subscribe-form">
+              <input type="email" placeholder="Enter your email..." required />
+              <button type="submit" class="btn-subscribe">Subscribe</button>
+            </form>
+          </div>
+
+          <div class="payment-block">
+            <h3 class="footer-heading underlined">
+              We accept the following payment options
+            </h3>
+            <div class="payment-icons">
+              <img src="./assets/icons/visa-icon.png" alt="Visa Payment" />
+              <img
+                src="./assets/icons/master-card-icon.png"
+                alt="Master Card Payment"
+              />
+              <img
+                src="./assets/icons/american-express-icon.png"
+                alt="American Express Payment"
+              />
+              <img
+                src="./assets/icons/discover-icon.png"
+                alt="Discover Payment"
+              />
+              <img src="./assets/icons/paypal-icon.png" alt="PayPal Payment" />
+              <img
+                src="./assets/icons/apple-pay-icon.png"
+                alt="Apple Pay Payment"
+              />
+              <img
+                src="./assets/icons/google-pay-iocn.png"
+                alt="Google Pay Payment"
+              />
+              <img src="./assets/icons/amazon-pay-icon.png" alt="Payment 8" />
+            </div>
+          </div>
+        </div>
+
+        <div class="social-footer-row">
+          <div class="social-icons">
+            <img
+              src="./assets/icons/facebook-app-symbol-icon.png"
+              alt="Facebook"
+            />
+            <img src="./assets/icons/instagram-icon.png" alt="Instagram" />
+            <img src="./assets/icons/twitter-icon.png" alt="Twitter" />
+            <img src="./assets/icons/pinterest-logo-icon.png" alt="Pinterest" />
+            <img src="./assets/icons/youtube-icon.png" alt="Youtube" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-accent-bar bottom"></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

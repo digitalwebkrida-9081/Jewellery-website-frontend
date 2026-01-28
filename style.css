@@ -411,7 +411,7 @@ ul {
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 1024px) {
   .display-heading {
-    font-size: 48px;
+    font-size: 32px; /* Corrected from 48px */
   }
   .split-row {
     gap: 30px;
@@ -423,24 +423,26 @@ ul {
   .split-row.reverse {
     flex-direction: column; /* Stack vertically on mobile */
     text-align: center;
-    margin-bottom: 60px;
-    gap: 30px;
+    margin-bottom: 40px; /* Reduced from 60px */
+    gap: 20px; /* Reduced from 30px */
   }
 
   .split-image {
     order: -1; /* Image always on top on mobile */
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0; /* Removed extra margin, gap handles it */
   }
 
   .split-image img {
     width: 100%; /* Full width on mobile */
-    height: 300px; /* Fixed height for consistency */
+    height: auto; /* Allow natural height or keep fixed if preferred, auto is better for responsiveness */
+    aspect-ratio: 4/3; /* Enforce a reasonable aspect ratio */
     max-width: 100%;
   }
 
   .display-heading {
-    font-size: 36px;
+    font-size: 30px;
+    margin-bottom: 15px; /* Ensure heading has space from text */
   }
 }
 
@@ -913,20 +915,31 @@ ul {
 }
 
 /* --- CTA RESPONSIVE --- */
+@media (max-width: 1200px) {
+  .cta-content-box {
+    padding-left: 50%; /* Adjusted padding for smaller desktops */
+  }
+}
+
 @media (max-width: 992px) {
   .cta-display-title {
-    font-size: 56px;
+    font-size: 36px; /* Corrected to match mobile or stay smaller */
   }
   .btn-extra-large {
     font-size: 24px;
     min-width: 240px;
     height: 55px;
   }
+  .cta-content-box {
+    padding-left: 5%; /* Center or near center on tablet */
+    align-items: flex-start; /* Or center depending on bg image */
+    text-align: left;
+  }
 }
 
 @media (max-width: 768px) {
   .cta-display-title {
-    font-size: 40px;
+    font-size: 32px;
   }
   .btn-extra-large {
     font-size: 20px;
@@ -937,6 +950,8 @@ ul {
     gap: 30px;
     padding-left: 0; /* Reset desktop padding */
     padding-top: 0; /* Reset desktop padding */
+    align-items: center;
+    text-align: center;
   }
 }
 
@@ -1434,5 +1449,42 @@ ul {
 @media (max-width: 480px) {
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* --- MOBILE SPECIFIC UTILITIES --- */
+.mobile-only-item {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only-item {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .mobile-only-item a {
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+}
+
+@media (max-width: 480px) {
+  .header-right {
+    gap: 8px;
+  }
+  .header-logo {
+    font-size: 18px;
+  }
+
+  /* 2-Column Feature Grid Fix */
+  .feature-grid {
+    gap: 15px;
+    justify-content: center;
+  }
+  .feature-item {
+    flex: 0 0 calc(50% - 15px) !important;
+    min-width: auto !important;
+    margin-bottom: 20px;
   }
 }
